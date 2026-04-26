@@ -1,44 +1,44 @@
+import java.util.HashSet;
+import java.util.Set;
 
-import java.io.*;
-import java.util.*;
+public class Manager extends Employee {
 
-/**
- * 
- */
-public class Manager extends Employee{
-    
-    public Manager() {
-    }
-
-    /**
-     * 
-     */
     private ManagerType type;
+    private Set<Course> courses = new HashSet<>();
 
-    /**
-     * @param Request r 
-     * @return
-     */
-    public void approveRegistration(void Request r) {
-        // TODO implement here
-        return null;
+    public Manager() {
+        super();
     }
 
-    /**
-     * @param Course c 
-     * @return
-     */
-    public void addCourse(void Course c) {
-        // TODO implement here
-        return null;
+    public Manager(String userId, String login, String password, String name, Lang lang,
+                   double salary, ManagerType type) {
+        super(userId, login, password, name, lang, salary);
+        this.type = type;
     }
 
-    /**
-     * @return
-     */
+    @Override
+    public void viewMenu() {
+        System.out.println("Manager menu: approve registration, add courses, generate reports.");
+    }
+
+    public void approveRegistration(Request request) {
+        System.out.println("Manager approved registration request: " + request);
+    }
+
+    public void addCourse(Course course) {
+        courses.add(course);
+        System.out.println("Manager added course: " + course);
+    }
+
     public void generateReport() {
-        // TODO implement here
-        return null;
+        System.out.println("Manager generated academic report.");
     }
 
+    public ManagerType getType() {
+        return type;
+    }
+
+    public Set<Course> getCourses() {
+        return courses;
+    }
 }

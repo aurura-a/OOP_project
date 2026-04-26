@@ -1,83 +1,65 @@
+import java.io.Serializable;
 
-import java.io.*;
-import java.util.*;
-
-/**
- * 
- */
 public abstract class User implements Serializable {
     private static final long serialVersionUID = 1L;
+
+    protected String userId;
+    protected String login;
+    protected String password;
+    protected String name;
+    protected Lang lang;
+
     public User() {
     }
 
-    /**
-     * 
-     */
-    protected String {length userID = 16};
-
-    /**
-     * 
-     */
-    protected String login;
-
-    /**
-     * 
-     */
-    protected String password;
-
-    /**
-     * 
-     */
-    protected String name;
-
-    /**
-     * 
-     */
-    protected langue lan;
-
-
-    /**
-     * @param String l 
-     * @param String p 
-     * @return
-     */
-    public boolean login(void String l, void String p) {
-        // TODO implement here
-        return false;
+    public User(String userId, String login, String password, String name, Lang lang) {
+        this.userId = userId;
+        this.login = login;
+        this.password = password;
+        this.name = name;
+        this.lang = lang;
     }
 
-    /**
-     * @return
-     */
+    public boolean login(String login, String password) {
+        return this.login.equals(login) && this.password.equals(password);
+    }
+
+    public abstract void viewMenu();
+
     public void viewNews() {
-        // TODO implement here
-        return null;
+        System.out.println(name + " is viewing news.");
     }
 
-    /**
-     * @return
-     */
     public void readPapers() {
-        // TODO implement here
-        return null;
+        System.out.println(name + " is reading papers.");
     }
 
-    /**
-     * @param String desc 
-     * @return
-     */
-    public void submitTechRequest(void String desc) {
-        // TODO implement here
-        return null;
+    public void submitTechRequest(String desc) {
+        System.out.println(name + " submitted tech request: " + desc);
     }
 
-    /**
-     * @param Journal j 
-     * @return
-     */
-    public void subscribeToJournal(void Journal j) {
-        // TODO implement here
-        return null;
+    public void subscribeToJournal(String journalName) {
+        System.out.println(name + " subscribed to journal: " + journalName);
     }
 
+    public String getUserId() {
+        return userId;
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Lang getLang() {
+        return lang;
+    }
+
+    @Override
+    public String toString() {
+        return "User ID: " + userId + ", name: " + name + ", login: " + login;
+    }
 }

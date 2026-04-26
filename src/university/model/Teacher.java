@@ -1,48 +1,40 @@
+import java.util.HashSet;
+import java.util.Set;
 
-import java.io.*;
-import java.util.*;
-
-/**
- * 
- */
 public class Teacher extends Employee {
 
-    /**
-     * Default constructor
-     */
-    public Teacher() {
-    }
-
-    /**
-     * 
-     */
     private TeacherTitle title;
+    private Set<Course> courses = new HashSet<>();
 
-    /**
-     * 
-     */
-    private Set<Course> courses;
-
-
-
-    /**
-     * @param Student s 
-     * @param Course c 
-     * @param Mark m 
-     * @return
-     */
-    public void putMark(void Student s, void Course c, void Mark m) {
-        // TODO implement here
-        return null;
+    public Teacher() {
+        super();
     }
 
-    /**
-     * @param Course c 
-     * @return
-     */
-    public void manageCourse(void Course c) {
-        // TODO implement here
-        return null;
+    public Teacher(String userId, String login, String password, String name, Lang lang,
+                   double salary, TeacherTitle title) {
+        super(userId, login, password, name, lang, salary);
+        this.title = title;
     }
 
+    @Override
+    public void viewMenu() {
+        System.out.println("Teacher menu: view courses, manage course, put marks, send complaint.");
+    }
+
+    public void putMark(Student student, Course course, Mark mark) {
+        System.out.println("Teacher " + name + " put mark for " + student.getName() + " in course " + course);
+    }
+
+    public void manageCourse(Course course) {
+        courses.add(course);
+        System.out.println("Teacher " + name + " manages course: " + course);
+    }
+
+    public TeacherTitle getTitle() {
+        return title;
+    }
+
+    public Set<Course> getCourses() {
+        return courses;
+    }
 }
