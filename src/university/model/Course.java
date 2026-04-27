@@ -1,83 +1,31 @@
+package university.model;
 
-import java.io.*;
-import java.util.*;
+import java.util.ArrayList;
 
-/**
- * 
- */
-public class Course implements Serializable {
-    private static final long serialVersionUID = 1L;
-    public Course() {
-    }
+import university.exceptions.CourseFullException;
 
-    /**
-     * 
-     */
-    private String courseCode;
-
-    
-
-	/**
-     * 
-     */
-    private String courseName;
-
-    /**
-     * 
-     */
+public class Course {
+    private String name;
     private int credits;
+    private int capacity;
 
-    /**
-     * 
-     */
-    private Set<Course> Course;
+    private ArrayList<String> students;
+    private ArrayList<String> prerequisites;
 
-    /**
-     * 
-     */
-    public Student *;
-
-
-
-    /**
-     * @return
-     */
-    public String getCourseInfo() {
-        // TODO implement here
-        return "";
+    public Course(String name, int credits, int capacity) {
+        this.name = name;
+        this.credits = credits;
+        this.capacity = capacity;
+        students = new ArrayList<>();
+        prerequisites = new ArrayList<>();
     }
-    
-    
-    /**GETTERS & SETTERS**/
-    public String getCourseCode() {
-		return courseCode;
-	}
 
-	public void setCourseCode(String courseCode) {
-		this.courseCode = courseCode;
-	}
-
-	public String getCourseName() {
-		return courseName;
-	}
-
-	public void setCourseName(String courseName) {
-		this.courseName = courseName;
-	}
-
-	public int getCredits() {
-		return credits;
-	}
-
-	public void setCredits(int credits) {
-		this.credits = credits;
-	}
-
-	public Set<Course> getCourse() {
-		return Course;
-	}
-
-	public void setCourse(Set<Course> course) {
-		Course = course;
-	}
+    public String toString() {
+        return name + " (" + credits + " credits)";
+    }
+    public ArrayList<String> getStudents() { return students; }
+    public ArrayList<String> getPrerequisites() { return prerequisites; }
+    public int getCapacity() { return capacity; }
+    public int getCredits() { return credits; }
+    public String getName() { return name; }
 }

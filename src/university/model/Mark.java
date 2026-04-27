@@ -1,51 +1,43 @@
+package university.model;
 
-import java.io.*;
-import java.util.*;
+import university.enums.Grade;
 
-/**
- * 
- */
-public class Mark implements Serializable {
-    private static final long serialVersionUID = 1L;
-    public Mark() {
-    }
-
-    /**
-     * 
-     */
-    private double firstAtt;
-
-    /**
-     * 
-     */
-    private double secondAtt;
-
-    /**
-     * 
-     */
+public class Mark {
+    private double att1;
+    private double att2;
     private double finalExam;
 
-    /**
-     * 
-     */
-    private double totalScore;
-
-
-
-    /**
-     * @return
-     */
-    public String calculateGrade() {
-        // TODO implement here
-        return "";
+    public Mark(double att1, double att2, double finalExam) {
+        this.setAtt1(att1);
+        this.setAtt2(att2);
+        this.setFinalExam(finalExam);
     }
 
-    /**
-     * @return
-     */
-    public double getGpaValue() {
-        // TODO implement here
-        return 0.0d;
-    }
+	public double getAtt1() {
+		return att1;
+	}
 
+	public void setAtt1(double att1) {
+		this.att1 = att1;
+	}
+
+	public double getAtt2() {
+		return att2;
+	}
+
+	public void setAtt2(double att2) {
+		this.att2 = att2;
+	}
+
+	public double getFinalExam() {
+		return finalExam;
+	}
+
+	public void setFinalExam(double finalExam) {
+		this.finalExam = finalExam;
+	}
+
+   
+
+    
 }

@@ -1,9 +1,4 @@
-package enums;
-
-
-/**
- * 
- */
+package university.enums;
 public enum RequestStatus {
     NEW,
     ACCEPTED,
