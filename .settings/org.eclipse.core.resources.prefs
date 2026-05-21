@@ -1,3 +1,13 @@
 eclipse.preferences.version=1
-encoding//src/university/res/messages_kz.properties=UTF-8
-encoding//src/university/res/messages_ru.properties=UTF-8
+encoding//src/university/app/MainApp.java=UTF-8
+encoding//src/university/data/Database.java=UTF-8
+encoding//src/university/data/IdGenerator.java=UTF-8
+encoding//src/university/data/Session.java=UTF-8
+encoding//src/university/data/messages_en.properties=UTF-8
+encoding//src/university/data/messages_kz.properties=UTF-8
+encoding//src/university/data/messages_ru.properties=UTF-8
+encoding//src/university/data/msg=UTF-8
+encoding//src/university/ui/ConsoleUI.java=UTF-8
+encoding//src/university/ui/views/AdminView.java=UTF-8
+encoding//src/university/ui/views/StudentView.java=UTF-8
+encoding/<project>=UTF-8

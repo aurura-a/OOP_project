@@ -1,8 +1,9 @@
 package university.menu;
 
 import java.util.Scanner;
-import university.model.Student;
+
 import university.service.StudentService;
+import university.users.Student;
 
 public class StudentMenu {
     private Student student;
